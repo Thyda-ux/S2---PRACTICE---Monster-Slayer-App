@@ -7,8 +7,12 @@ function Log({ logs }) {
             <ul className="log-entries">
                 {logs.map((log, index) => (
                     <li key={index} className={log.isDamage ? 'log--damage' : 'log--heal'}>
-                        <span>{log.isPlayer ? 'Player' : 'Monster'}</span>
-                        <span>{log.text}</span>
+                        <span style={{ color: log.isPlayer ? 'purple' : 'yellow' }}>
+                            {log.isPlayer ? 'Player' : 'Monster'}
+                        </span>
+                        <span style={{ color: log.isDamage ? 'red' : 'green' }}>
+                            {log.text}
+                        </span>
                     </li>
                 ))}
             </ul>
